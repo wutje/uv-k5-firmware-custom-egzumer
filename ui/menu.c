@@ -39,106 +39,107 @@
 const t_menu_item MenuList[] =
 {
 //   text,     voice ID,                               menu ID
-	{"Step",   VOICE_ID_FREQUENCY_STEP,                MENU_STEP          },
-	{"TxPwr",  VOICE_ID_POWER,                         MENU_TXP           }, // was "TXP"
-	{"RxDCS",  VOICE_ID_DCS,                           MENU_R_DCS         }, // was "R_DCS"
-	{"RxCTCS", VOICE_ID_CTCSS,                         MENU_R_CTCS        }, // was "R_CTCS"
-	{"TxDCS",  VOICE_ID_DCS,                           MENU_T_DCS         }, // was "T_DCS"
-	{"TxCTCS", VOICE_ID_CTCSS,                         MENU_T_CTCS        }, // was "T_CTCS"
-	{"TxODir", VOICE_ID_TX_OFFSET_FREQUENCY_DIRECTION, MENU_SFT_D         }, // was "SFT_D"
-	{"TxOffs", VOICE_ID_TX_OFFSET_FREQUENCY,           MENU_OFFSET        }, // was "OFFSET"
-	{"W/N",    VOICE_ID_CHANNEL_BANDWIDTH,             MENU_W_N           },
-	{"Scramb", VOICE_ID_SCRAMBLER_ON,                  MENU_SCR           }, // was "SCR"
-	{"BusyCL", VOICE_ID_BUSY_LOCKOUT,                  MENU_BCL           }, // was "BCL"
-	{"Compnd", VOICE_ID_INVALID,                       MENU_COMPAND       },
-	{"Demodu", VOICE_ID_INVALID,                       MENU_AM            }, // was "AM"
-	{"ScAdd1", VOICE_ID_INVALID,                       MENU_S_ADD1        },
-	{"ScAdd2", VOICE_ID_INVALID,                       MENU_S_ADD2        },
-	{"ChSave", VOICE_ID_MEMORY_CHANNEL,                MENU_MEM_CH        }, // was "MEM-CH"
-	{"ChDele", VOICE_ID_DELETE_CHANNEL,                MENU_DEL_CH        }, // was "DEL-CH"
-	{"ChName", VOICE_ID_INVALID,                       MENU_MEM_NAME      },	
+	[MENU_STEP          ] = {.name = "Step",   .voice_id = VOICE_ID_FREQUENCY_STEP,                },
+	[MENU_TXP           ] = {.name = "TxPwr",  .voice_id = VOICE_ID_POWER,                         }, // was "TXP"
+	[MENU_R_DCS         ] = {.name = "RxDCS",  .voice_id = VOICE_ID_DCS,                           }, // was "R_DCS"
+	[MENU_R_CTCS        ] = {.name = "RxCTCS", .voice_id = VOICE_ID_CTCSS,                         }, // was "R_CTCS"
+	[MENU_T_DCS         ] = {.name = "TxDCS",  .voice_id = VOICE_ID_DCS,                           }, // was "T_DCS"
+	[MENU_T_CTCS        ] = {.name = "TxCTCS", .voice_id = VOICE_ID_CTCSS,                         }, // was "T_CTCS"
+	[MENU_SFT_D         ] = {.name = "TxODir", .voice_id = VOICE_ID_TX_OFFSET_FREQUENCY_DIRECTION, }, // was "SFT_D"
+	[MENU_OFFSET        ] = {.name = "TxOffs", .voice_id = VOICE_ID_TX_OFFSET_FREQUENCY,           }, // was "OFFSET"
+	[MENU_W_N           ] = {.name = "W/N",    .voice_id = VOICE_ID_CHANNEL_BANDWIDTH,             },
+	[MENU_SCR           ] = {.name = "Scramb", .voice_id = VOICE_ID_SCRAMBLER_ON,                  }, // was "SCR"
+	[MENU_BCL           ] = {.name = "BusyCL", .voice_id = VOICE_ID_BUSY_LOCKOUT,                  }, // was "BCL"
+	[MENU_COMPAND       ] = {.name = "Compnd", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_AM            ] = {.name = "Demodu", .voice_id = VOICE_ID_INVALID                       }, // was "AM"
+	[MENU_S_ADD1        ] = {.name = "ScAdd1", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_S_ADD2        ] = {.name = "ScAdd2", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_MEM_CH        ] = {.name = "ChSave", .voice_id = VOICE_ID_MEMORY_CHANNEL,                }, // was "MEM-CH"
+	[MENU_DEL_CH        ] = {.name = "ChDele", .voice_id = VOICE_ID_DELETE_CHANNEL,                }, // was "DEL-CH"
+	[MENU_MEM_NAME      ] = {.name = "ChName", .voice_id = VOICE_ID_INVALID                       },	
 
-	{"SList",  VOICE_ID_INVALID,                       MENU_S_LIST        },
-	{"SList1", VOICE_ID_INVALID,                       MENU_SLIST1        },
-	{"SList2", VOICE_ID_INVALID,                       MENU_SLIST2        },
-	{"ScnRev", VOICE_ID_INVALID,                       MENU_SC_REV        },
+	[MENU_S_LIST        ] = {.name = "SList",  .voice_id = VOICE_ID_INVALID                       },
+	[MENU_SLIST1        ] = {.name = "SList1", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_SLIST2        ] = {.name = "SList2", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_SC_REV        ] = {.name = "ScnRev", .voice_id = VOICE_ID_INVALID                       },
 #ifdef ENABLE_NOAA
-	{"NOAA-S", VOICE_ID_INVALID,                       MENU_NOAA_S        },
+	[MENU_NOAA_S        ] = {.name = "NOAA-S", .voice_id = VOICE_ID_INVALID                       },
 #endif
 
-	{"F1Shrt",    VOICE_ID_INVALID,                    MENU_F1SHRT        },
-	{"F1Long",    VOICE_ID_INVALID,                    MENU_F1LONG        },
-	{"F2Shrt",    VOICE_ID_INVALID,                    MENU_F2SHRT        },
-	{"F2Long",    VOICE_ID_INVALID,                    MENU_F2LONG        },
-	{"M Long",    VOICE_ID_INVALID,                    MENU_MLONG         },
+	[MENU_F1SHRT        ] = {.name = "F1Shrt",    .voice_id = VOICE_ID_INVALID                    },
+	[MENU_F1LONG        ] = {.name = "F1Long",    .voice_id = VOICE_ID_INVALID                    },
+	[MENU_F2SHRT        ] = {.name = "F2Shrt",    .voice_id = VOICE_ID_INVALID                    },
+	[MENU_F2LONG        ] = {.name = "F2Long",    .voice_id = VOICE_ID_INVALID                    },
+	[MENU_MLONG         ] = {.name = "M Long",    .voice_id = VOICE_ID_INVALID                    },
 
-	{"KeyLck", VOICE_ID_INVALID,                       MENU_AUTOLK        }, // was "AUTOLk"
-	{"TxTOut", VOICE_ID_TRANSMIT_OVER_TIME,            MENU_TOT           }, // was "TOT"
-	{"BatSav", VOICE_ID_SAVE_MODE,                     MENU_SAVE          }, // was "SAVE"
-	{"Mic",    VOICE_ID_INVALID,                       MENU_MIC           },
+	[MENU_AUTOLK        ] = {.name = "KeyLck", .voice_id = VOICE_ID_INVALID                       }, // was "AUTOLk"
+	[MENU_TOT           ] = {.name = "TxTOut", .voice_id = VOICE_ID_TRANSMIT_OVER_TIME,            }, // was "TOT"
+	[MENU_SAVE          ] = {.name = "BatSav", .voice_id = VOICE_ID_SAVE_MODE,                     }, // was "SAVE"
+	[MENU_MIC           ] = {.name = "Mic",    .voice_id = VOICE_ID_INVALID                       },
 #ifdef ENABLE_AUDIO_BAR
-	{"MicBar", VOICE_ID_INVALID,                       MENU_MIC_BAR       },
-#endif		
-	{"ChDisp", VOICE_ID_INVALID,                       MENU_MDF           }, // was "MDF"
-	{"POnMsg", VOICE_ID_INVALID,                       MENU_PONMSG        },
-	{"BatTxt", VOICE_ID_INVALID,                       MENU_BAT_TXT       },	
-	{"BackLt", VOICE_ID_INVALID,                       MENU_ABR           }, // was "ABR"
-	{"BLMin",  VOICE_ID_INVALID,                       MENU_ABR_MIN       },
-	{"BLMax",  VOICE_ID_INVALID,                       MENU_ABR_MAX       },
-	{"BltTRX", VOICE_ID_INVALID,                       MENU_ABR_ON_TX_RX  },
-	{"Beep",   VOICE_ID_BEEP_PROMPT,                   MENU_BEEP          },
+	[MENU_MIC_BAR       ] = {.name = "MicBar", .voice_id = VOICE_ID_INVALID                       },
+#endif 	
+	[MENU_MDF           ] = {.name = "ChDisp", .voice_id = VOICE_ID_INVALID                       }, // was "MDF"
+	[MENU_PONMSG        ] = {.name = "POnMsg", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_BAT_TXT       ] = {.name = "BatTxt", .voice_id = VOICE_ID_INVALID                       },	
+	[MENU_ABR           ] = {.name = "BackLt", .voice_id = VOICE_ID_INVALID                       }, // was "ABR"
+	[MENU_ABR_MIN       ] = {.name = "BLMin",  .voice_id = VOICE_ID_INVALID                       },
+	[MENU_ABR_MAX       ] = {.name = "BLMax",  .voice_id = VOICE_ID_INVALID                       },
+	[MENU_ABR_ON_TX_RX  ] = {.name = "BltTRX", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_BEEP          ] = {.name = "Beep",   .voice_id = VOICE_ID_BEEP_PROMPT,                   },
 #ifdef ENABLE_VOICE
-	{"Voice",  VOICE_ID_VOICE_PROMPT,                  MENU_VOICE         },
+	[MENU_VOICE         ] = {.name = "Voice",  .voice_id = VOICE_ID_VOICE_PROMPT,                  },
 #endif
-	{"Roger",  VOICE_ID_INVALID,                       MENU_ROGER         },
-	{"STE",    VOICE_ID_INVALID,                       MENU_STE           },
-	{"RP STE", VOICE_ID_INVALID,                       MENU_RP_STE        },
-	{"1 Call", VOICE_ID_INVALID,                       MENU_1_CALL        },
+	[MENU_ROGER         ] = {.name = "Roger",  .voice_id = VOICE_ID_INVALID                       },
+	[MENU_STE           ] = {.name = "STE",    .voice_id = VOICE_ID_INVALID                       },
+	[MENU_RP_STE        ] = {.name = "RP STE", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_1_CALL        ] = {.name = "1 Call", .voice_id = VOICE_ID_INVALID                       },
 #ifdef ENABLE_ALARM
-	{"AlarmT", VOICE_ID_INVALID,                       MENU_AL_MOD        },
+	[MENU_AL_MOD        ] = {.name = "AlarmT", .voice_id = VOICE_ID_INVALID                       },
 #endif
-	{"ANI ID", VOICE_ID_ANI_CODE,                      MENU_ANI_ID        },
-	{"UPCode", VOICE_ID_INVALID,                       MENU_UPCODE        },
-	{"DWCode", VOICE_ID_INVALID,                       MENU_DWCODE        },
-	{"PTT ID", VOICE_ID_INVALID,                       MENU_PTT_ID        },
-	{"D ST",   VOICE_ID_INVALID,                       MENU_D_ST          },
-    {"D Resp", VOICE_ID_INVALID,                       MENU_D_RSP         },
-	{"D Hold", VOICE_ID_INVALID,                       MENU_D_HOLD        },
-	{"D Prel", VOICE_ID_INVALID,                       MENU_D_PRE         },
-	{"D Decd", VOICE_ID_INVALID,                       MENU_D_DCD         },
-	{"D List", VOICE_ID_INVALID,                       MENU_D_LIST        },
-	{"D Live", VOICE_ID_INVALID,                       MENU_D_LIVE_DEC    }, // live DTMF decoder
+	[MENU_ANI_ID        ] = {.name = "ANI ID", .voice_id = VOICE_ID_ANI_CODE,                      },
+	[MENU_UPCODE        ] = {.name = "UPCode", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_DWCODE        ] = {.name = "DWCode", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_PTT_ID        ] = {.name = "PTT ID", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_D_ST          ] = {.name = "D ST",   .voice_id = VOICE_ID_INVALID                       },
+        [MENU_D_RSP         ] = {.name = "D Resp", .voice_id = VOICE_ID_INVALID                       },
+        [MENU_D_HOLD        ] = {.name = "D Hold", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_D_PRE         ] = {.name = "D Prel", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_D_DCD         ] = {.name = "D Decd", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_D_LIST        ] = {.name = "D List", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_D_LIVE_DEC    ] = {.name = "D Live", .voice_id = VOICE_ID_INVALID                       }, // live DTMF decoder
 #ifdef ENABLE_AM_FIX
-	{"AM Fix", VOICE_ID_INVALID,                       MENU_AM_FIX        },
+	[MENU_AM_FIX        ] = {.name = "AM Fix", .voice_id = VOICE_ID_INVALID                       },
 #endif
 #ifdef ENABLE_AM_FIX_TEST1
-	{"AM FT1", VOICE_ID_INVALID,                       MENU_AM_FIX_TEST1  },
+	[MENU_AM_FIX_TEST1  ] = {.name = "AM FT1", .voice_id = VOICE_ID_INVALID                       },
 #endif
 #ifdef ENABLE_VOX
-	{"VOX",    VOICE_ID_VOX,                           MENU_VOX           },
+	[MENU_VOX           ] = {.name = "VOX",    .voice_id = VOICE_ID_VOX,                           },
 #endif
-	{"BatVol", VOICE_ID_INVALID,                       MENU_VOL           }, // was "VOL"
-	{"RxMode", VOICE_ID_DUAL_STANDBY,                  MENU_TDR           },
-	{"Sql",    VOICE_ID_SQUELCH,                       MENU_SQL           },
+	[MENU_VOL           ] = {.name = "BatVol", .voice_id = VOICE_ID_INVALID                       }, // was "VOL"
+	[MENU_TDR           ] = {.name = "RxMode", .voice_id = VOICE_ID_DUAL_STANDBY,                  },
+	[MENU_SQL           ] = {.name = "Sql",    .voice_id = VOICE_ID_SQUELCH,                       },
 
 	// hidden menu items from here on
 	// enabled if pressing both the PTT and upper side button at power-on
-	{"F Lock", VOICE_ID_INVALID,                       MENU_F_LOCK        },
-	{"Tx 200", VOICE_ID_INVALID,                       MENU_200TX         }, // was "200TX"
-	{"Tx 350", VOICE_ID_INVALID,                       MENU_350TX         }, // was "350TX"
-	{"Tx 500", VOICE_ID_INVALID,                       MENU_500TX         }, // was "500TX"
-	{"350 En", VOICE_ID_INVALID,                       MENU_350EN         }, // was "350EN"
-	{"ScraEn", VOICE_ID_INVALID,                       MENU_SCREN         }, // was "SCREN"
-	{"TxEnab", VOICE_ID_INVALID,                       MENU_TX_EN         }, // enable TX
+	[MENU_F_LOCK        ] = {.name = "F Lock", .voice_id = VOICE_ID_INVALID                       },
+	[MENU_200TX         ] = {.name = "Tx 200", .voice_id = VOICE_ID_INVALID                       }, // was "200TX"
+	[MENU_350TX         ] = {.name = "Tx 350", .voice_id = VOICE_ID_INVALID                       }, // was "350TX"
+	[MENU_500TX         ] = {.name = "Tx 500", .voice_id = VOICE_ID_INVALID                       }, // was "500TX"
+	[MENU_350EN         ] = {.name = "350 En", .voice_id = VOICE_ID_INVALID                       }, // was "350EN"
+	[MENU_SCREN         ] = {.name = "ScraEn", .voice_id = VOICE_ID_INVALID                       }, // was "SCREN"
+	[MENU_TX_EN         ] = {.name = "TxEnab", .voice_id = VOICE_ID_INVALID                       }, // enable TX
 #ifdef ENABLE_F_CAL_MENU
-	{"FrCali", VOICE_ID_INVALID,                       MENU_F_CALI        }, // reference xtal calibration
+	[MENU_F_CALI        ] = {.name = "FrCali", .voice_id = VOICE_ID_INVALID                       }, // reference xtal calibration
 #endif
-	{"BatCal", VOICE_ID_INVALID,                       MENU_BATCAL        }, // battery voltage calibration
-	{"BatTyp", VOICE_ID_INVALID,                       MENU_BATTYP        }, // battery type 1600/2200mAh
-	{"Reset",  VOICE_ID_INITIALISATION,                MENU_RESET         }, // might be better to move this to the hidden menu items ?
+	[MENU_BATCAL        ] = {.name = "BatCal", .voice_id = VOICE_ID_INVALID                       }, // battery voltage calibration
+	[MENU_BATTYP        ] = {.name = "BatTyp", .voice_id = VOICE_ID_INVALID                       }, // battery type 1600/2200mAh
+	[MENU_RESET         ] = {.name = "Reset",  .voice_id = VOICE_ID_INITIALISATION,                }, // might be better to move this to the hidden menu items ?
 
-	{"",       VOICE_ID_INVALID,                       0xff               }  // end of list - DO NOT delete or move this this
+//	{.name = "",       .voice_id = VOICE_ID_INVALID                       0xff               }  // end of list - DO NOT delete or move this this
 };
+
 
 const uint8_t FIRST_HIDDEN_MENU_ITEM = MENU_F_LOCK;
 
@@ -372,17 +373,9 @@ bool    gIsInSubMenu;
 uint8_t gMenuCursor;
 int UI_MENU_GetCurrentMenuId() {
 	if(gMenuCursor < ARRAY_SIZE(MenuList))
-		return MenuList[gMenuCursor].menu_id;
+		return gMenuCursor;
 	else
-		return MenuList[ARRAY_SIZE(MenuList)-1].menu_id;
-}
-
-uint8_t UI_MENU_GetMenuIdx(uint8_t id)
-{
-	for(uint8_t i = 0; i < ARRAY_SIZE(MenuList); i++)
-		if(MenuList[i].menu_id == id)
-			return i;
-	return 0;
+		return ARRAY_SIZE(MenuList) - 1;
 }
 
 int32_t gSubMenuSelection;

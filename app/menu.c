@@ -87,10 +87,10 @@ void MENU_StartCssScan(void)
 void MENU_CssScanFound(void)
 {
 	if(gScanCssResultType == CODE_TYPE_DIGITAL || gScanCssResultType == CODE_TYPE_REVERSE_DIGITAL) {
-		gMenuCursor = UI_MENU_GetMenuIdx(MENU_R_DCS);
+		gMenuCursor = MENU_R_DCS;
 	}
 	else if(gScanCssResultType == CODE_TYPE_CONTINUOUS_TONE) {
-		gMenuCursor = UI_MENU_GetMenuIdx(MENU_R_CTCS);
+		gMenuCursor = MENU_R_CTCS;
 	}
 
 	MENU_ShowCurrentSetting();
