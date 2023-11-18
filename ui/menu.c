@@ -192,7 +192,7 @@ const char gSubMenu_TOT[11][7] =
 	"15 min"
 };
 
-const char* gSubMenu_RXMode[4] =
+const char* const gSubMenu_RXMode[4] =
 {
 	"MAIN\nONLY", 		// TX and RX on main only
 	"DUAL RX\nRESPOND", // Watch both and respond
@@ -216,7 +216,7 @@ const char gSubMenu_SC_REV[3][8] =
 	"STOP"
 };
 
-const char* gSubMenu_MDF[4] =
+const char* const gSubMenu_MDF[4] =
 {
 	"FREQ",
 	"CHANNEL\nNUMBER",
@@ -240,7 +240,7 @@ const char gSubMenu_D_RSP[4][11] =
 	"BOTH"
 };
 
-const char* gSubMenu_PTT_ID[5] =
+const char* const gSubMenu_PTT_ID[5] =
 {
 	"OFF",
 	"UP CODE",

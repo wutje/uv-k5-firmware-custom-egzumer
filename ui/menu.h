@@ -133,18 +133,18 @@ extern const char        gSubMenu_W_N[2][7];
 extern const char        gSubMenu_OFF_ON[2][4];
 extern const char        gSubMenu_SAVE[5][4];
 extern const char        gSubMenu_TOT[11][7];
-extern const char*        gSubMenu_RXMode[4];
+extern const char* const gSubMenu_RXMode[4];
 
 #ifdef ENABLE_VOICE
 	extern const char    gSubMenu_VOICE[3][4];
 #endif
 extern const char        gSubMenu_SC_REV[3][8];
-extern const char*       gSubMenu_MDF[4];
+extern const char* const gSubMenu_MDF[4];
 #ifdef ENABLE_ALARM
 	extern const char    gSubMenu_AL_MOD[2][5];
 #endif
 extern const char        gSubMenu_D_RSP[4][11];
-extern const char*       gSubMenu_PTT_ID[5];
+extern const char* const gSubMenu_PTT_ID[5];
 extern const char        gSubMenu_PONMSG[4][8];
 extern const char        gSubMenu_ROGER[3][6];
 extern const char        gSubMenu_RESET[2][4];
@@ -158,16 +158,16 @@ extern const char        gSubMenu_BAT_TXT[3][8];
 extern const char 		 gSubMenu_BATTYP[2][9];
 extern const char        gSubMenu_SCRAMBLER[11][7];
 
-typedef struct {char* name; uint8_t id;} t_sidefunction;
+typedef struct {const char* name; uint8_t id;} t_sidefunction;
 extern const uint8_t 		 gSubMenu_SIDEFUNCTIONS_size;
 extern const t_sidefunction* gSubMenu_SIDEFUNCTIONS;
-				         
+				
 extern bool              gIsInSubMenu;
-				         
+				
 extern uint8_t           gMenuCursor;
 
 extern int32_t           gSubMenuSelection;
-				         
+				
 extern char              edit_original[17];
 extern char              edit[17];
 extern int               edit_index;
